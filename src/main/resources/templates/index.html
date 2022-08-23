@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Only the Scores</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/css/index.css}" />
+    <!--<script type="text/javascript" th:src="@{/styles/js/index.js}"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/jyd3izu.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body style="background-color: rgba(184, 218, 255, 0.82)">
+<div>
+<h1 class="skewed-font">
+    Only the Scores
+</h1>
+
+<h3 class="date" id="todaysDate"></h3>
+<!--<h3 class="date" th:text="${cacheCounter}"></h3>-->
+
+
+<div>
+</div>
+<div class="oneline" th:each="game : ${baseballScores.games}">
+        <div class="teams away">
+            <span class="image-container">
+                <img th:src="@{${'/images/' + game.awaylogo + '.png'}}" alt="logo" height="45">
+            </span>
+                <p th:text="${game.awayteam}"> </p>
+            <div th:text="${game.awayscore}" class="score" > </div>
+        </div>
+    <div class="game-status" th:text="${game.status}"> </div>
+        <div class="teams home">
+            <div th:text="${game.homescore}" class="score"> </div>
+
+            <p th:text="${game.hometeam}"> </p>
+            <span class="image-container">
+            <img th:src="@{${'/images/' + game.homelogo + '.png'}}" alt="logo" height="45">
+            </span>
+        </div>
+</div>
+
+</div>
+
+    <script>
+
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const m = new Date();
+    let month = months[m.getMonth()];
+
+    const d = new Date();
+    let day = d.getDate();
+
+    const y = new Date();
+    let year = y.getFullYear();
+
+    let date = month + " " + day + ", " + year;
+
+    todaysDate.innerHTML = date;
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+.teams {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 2.15;
+    justify-content: space-between;
+}
+
+/*.teams > p {
+    margin: 0 10px;
+}*/
+
+.image-container {
+    width: 120px;
+    display: flex;
+    justify-content: center;
+}
+
+.oneline {
+    background-color: #F9F9F9;
+    border: 1px solid grey;
+    margin: 25px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 13px 22px -10px rgb(211 211 211 / 85%);
+    box-shadow: 0px 13px 22px -10px rgb(211 211 211 / 85%);
+    font-family: forma-djr-display,sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    width: 60%;
+}
+
+.game-status {
+    text-align: center;
+    flex: .75;
+    font-style: normal;
+}
+
+.score {
+    font-size: 24px;
+    font-style: normal;
+}
+
+h1 {
+    margin: 45px 0px 10px 0px;
+    text-align: center;
+    font-family: filmotype-keynote,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 100px;
+}
+
+.skewed-font {
+    transform: skew(17deg);
+}
+
+.date {
+    font-family: filmotype-keynote,sans-serif;
+    text-align: center;
+    margin: 0 0 40px 0;
+    font-size: 28px;
+    transform: skew(17deg);
+}
+
+
+@media only screen and (max-width: 980px)  {
+    .score {
+        font-size: 16px;
+        font-style: normal;
+    }
+    .date {
+        font-size: 22px;
+    }
+    .oneline {
+        width: 100%;
+        margin: 15px auto;
+        height: 50px;
+    }
+    .teams p {
+        font-size: 14px;
+    }
+    .image-container img {
+        transform: scale(0.5, 0.5);
+        -ms-transform: scale(0.5, 0.5);
+        -webkit-transform: scale(0.5, 0.5);
+    }
+    .image-container {
+        width: 45px;
+    }
+    .game-status {
+        font-size: 12px;
+        flex: .5;
+    }
+    h1 {
+        font-size: 50px;
+    }
+    .teams {
+        flex: 2.5;
+        justify-content: space-around;
+    }
+}
+
